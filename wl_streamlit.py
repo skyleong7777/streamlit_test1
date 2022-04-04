@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[34]:
+
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -8,14 +14,14 @@ from fbprophet.diagnostics import cross_validation
 from fbprophet.plot import plot_cross_validation_metric
 
 #1 title & import CSV
-st.title('Time Series Forecasting Win loss---create by sky')
+st.title('Time Series Forecasting Win loss')
 st.write("Import the time series CSV file") 
 data = st.file_uploader('Upload here',type='csv')
 
 #2 check the data is none or not
 if data is not None:
     appdata = pd.read_csv(data)  #read the data fro
-    appdata.rename(columns={'Date':'ds','Adj Close':'y'},inplace=True)
+    appdata.rename(columns={'Date':'ds','Adj Close':'y'})
     appdata['ds'] = pd.to_datetime(appdata['ds'],errors='coerce') 
     st.write(data) #display the data  
     max_date = appdata['ds'].max() #compute latest date in the data 
@@ -51,3 +57,16 @@ if data is not None:
     st.write("The following plots show a high level trend of predicted values")
     figure2 = obj.plot_components(fcst) 
     st.write(figure2) 
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
