@@ -14,7 +14,7 @@ from fbprophet.diagnostics import cross_validation
 from fbprophet.plot import plot_cross_validation_metric
 
 #1 title & import CSV
-st.title('Time Series Forecasting Win loss')
+st.title('Time Series Forecasting')
 st.write("Import the time series CSV file") 
 data = st.file_uploader('Upload here',type='csv')
 
