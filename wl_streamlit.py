@@ -21,7 +21,7 @@ data = st.file_uploader('Upload here',type='csv')
 #2 check the data is none or not
 if data is not None:
     appdata = pd.read_csv(data)  #read the data fro
-    appdata.rename(columns={'Date':'ds','Adj Close':'y'})
+    appdata.rename(columns={'Date':'ds','Adj Close':'y'},inplace=True)
     appdata['ds'] = pd.to_datetime(appdata['ds'],errors='coerce') 
     st.write(data) #display the data  
     max_date = appdata['ds'].max() #compute latest date in the data 
